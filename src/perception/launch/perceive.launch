@@ -1,0 +1,10 @@
+<launch>
+  <group ns = "No_0">
+    <node pkg="perception" type="perceive" name="perceive" output="screen" required="true">
+      <remap from = "self_location" to = "/odom"/>
+      <remap from = "slam_ret" to = "/map"/>
+      <remap from = "/No_0/velodyne_points" to = "/agx1/velodyne_points"/>
+    </node>
+  </group>
+
+</launch>

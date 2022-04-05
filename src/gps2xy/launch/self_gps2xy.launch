@@ -1,0 +1,6 @@
+<launch>
+  <group ns = "No_0">
+    <node pkg="gps2xy" type="self_gps2xy" name="self_gps2xy" output="screen" required="true"/>
+  </group>
+
+</launch>
