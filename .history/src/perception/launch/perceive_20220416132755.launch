@@ -1,0 +1,10 @@
+<launch>
+
+    <node pkg="perception" type="perceive" name="perceive" output="screen" required="true">
+      <remap from = "self_location" to = "myodom"/>
+      <remap from = "slam_ret" to = "/map"/>
+      <remap from = "/No_0/velodyne_points" to = "/No_0/velodyne_points"/>
+    </node>
+
+
+</launch>

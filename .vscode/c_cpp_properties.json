@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "/usr/include/**",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5",
+                "${workspaceFolder}/src/local_planning/include/local_planning",
+                "${workspaceFolder}/devel/include",
+                "${workspaceFolder}/src/routing/include",
+                "/opt/ros/noetic/include",
+                "/usr/include/eigen3",
+                "${workspaceFolder}/src/trailing_mpc/include",
+                "${workspaceFolder}/devel/include/nlink_parser",
+                "${workspaceFolder}/src/gps2xy/include/gps2xy",
+                "${workspaceFolder}/src/perception/include/perception",
+                "${workspaceFolder}/src/get_gps/include/get_gps",
+                "/usr/include/eigen3",
+                "/usr/include/pcl-1.10"
+            ],
+            "name": "ROS"
+        }
+    ],
+    "version": 4
+}

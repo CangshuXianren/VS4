@@ -1,0 +1,18 @@
+<launch>
+  <group ns = "No_0">
+    <param name="v_resolution" type="double" value="0.01"/>
+    <param name="yaw_rate_resolution" type="double" value="0.001745329"/>
+    <param name="dt" type="double" value="0.1"/>
+    <param name="predict_time" type="double" value="5.0"/>
+    <param name="goal_cost_gain" type="double" value="0.2"/>
+    <param name="speed_cost_gain" type="double" value="0.7"/>
+    <param name="distance_cost_gain" type="double" value="1.0"/>
+    <param name="obstacle_cost_gain" type="double" value="1.0"/>
+    <node pkg="local_planning" type="dwa" name="dwa" output="screen" required="true" launch-prefix="xterm -e gdb -ex run --args">
+      <remap from="self_location" to="myodom"/>
+      <param name = "dv" value = "0.5"/>
+      <param name = "dw" value = "0.4"/>
+    </node>
+  </group>
+
+</launch>

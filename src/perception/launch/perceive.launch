@@ -1,0 +1,9 @@
+<launch>
+
+    <node pkg="perception" type="perceive" name="perceive" output="screen" required="true" launch-prefix="xterm -e">
+      <remap from = "self_location" to = "myodom"/>
+      <remap from = "slam_ret" to = "/map"/>
+    </node>
+
+
+</launch>

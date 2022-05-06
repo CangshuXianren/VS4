@@ -1,0 +1,42 @@
+<launch>
+  <include file="$(find gps2xy)/launch/self_gps2xy.launch" ns="No_2"/>
+  <include file="$(find local_planning)/launch/dwa.launch" ns="No_2">
+    <param name = "dwa/FLtarget" value = "/No_1/myodom"/>
+  </include>
+  <include file="$(find perception)/launch/perceive.launch" ns="No_2"/>
+  <node pkg = "rviz" type = "rviz" name = "rviz2" output = "screen" args="-d $(find trailing_mpc)/launch/rviz_config/no2.rviz"/>
+  <include file="$(find rs_to_velodyne)/launch/rs2velodyne.launch" ns="No_2"/>
+  
+  <group ns = "No_2">
+    <param name = "vmin" value = "0.2"/>
+    <param name = "vmax" value = "1.0"/>
+    <param name = "wmin" value = "-0.7854"/>
+    <param name = "wmax" value = "0.7854"/>
+    <param name = "overall_length" value = "0.7"/>
+    <param name = "ID" value = "1"/>
+    <param name = "tolerance" value = "0.1"/>
+
+    <node pkg = "trailing_mpc" type = "mpc_node" name = "mpc_node" output = "screen" required = "true">  
+      <remap from="self_location" to="myodom"/>
+      <remap from="/No_0/cmd_vel" to="/No_1/cmd_vel"/>
+      <!-- <remap from="/cmd_vel" to="tmp"/> -->
+
+      <param name = "delta_v" value = "0.05"/>
+      <param name = "delta_w" value = "0.05"/>
+      <param name = "Nx" value = "3"/>
+      <param name = "Nu" value = "2"/>
+      <param name = "Np" value = "60"/>
+      <param name = "Nc" value = "30"/>
+      <param name = "Row" value = "10"/>
+      <param name = "q1" value = "10"/>
+      <param name = "q2" value = "10"/>
+      <param name = "q3" value = "1"/>
+      <param name = "r1" value = "0"/>
+      <param name = "r2" value = "0"/>
+      <param name = "mpc_hz" value = "15"/>
+    </node>
+  </group>
+
+
+
+</launch>

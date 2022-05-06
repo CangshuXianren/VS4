@@ -1,0 +1,7 @@
+<launch>
+
+
+    <node pkg="gps2xy" type="self_gps2xy" name="self_gps2xy" output="screen" required="true"/>
+
+
+</launch>

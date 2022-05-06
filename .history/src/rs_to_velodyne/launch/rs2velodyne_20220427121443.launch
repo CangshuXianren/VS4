@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="rs_to_velodyne" name="rs_to_velodyne" type="rs_to_velodyne"  args="XYZIRT XYZIRT"   output="screen" required = "true">
+  </node>
+
+  <!-- Sim Time -->
+  <param name="/use_sim_time" value="true" />
+
+</launch>

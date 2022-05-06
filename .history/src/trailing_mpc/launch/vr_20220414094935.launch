@@ -1,0 +1,15 @@
+<launch>
+
+  <group ns = "No_0">
+    <node pkg = "trailing_mpc" type = "virtual_base" name = "virtual_base0" output = "screen">  
+
+    </node>
+
+    <node pkg = "trailing_mpc" type = "virtual_environment" name = "virtual_environment" output = "screen">  
+
+    </node>
+  </group>
+
+
+
+</launch>
